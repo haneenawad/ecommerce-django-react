@@ -94,7 +94,7 @@ def test_user_login(driver):
     driver.find_element(By.ID, "password").click()
     driver.find_element(By.ID, "password").send_keys("Hha12345")
     driver.find_element(By.CSS_SELECTOR, ".mt-3").click()
-    # time.sleep(2)
+    time.sleep(2)
     username = driver.find_element(By.CSS_SELECTOR, "#username").text
     assert username == "TESTER"
 
@@ -149,4 +149,4 @@ def test_user_create_account_for_existed_account(driver):
                                      "#root > div > main > div > div > div > div.fade.alert.alert-danger.show").text
     assert error_note == "User with this email is already registered"
 
-#1
+#12
