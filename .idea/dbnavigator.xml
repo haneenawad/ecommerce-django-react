@@ -32,7 +32,10 @@
       <console name="Connection" type="STANDARD" schema="main" session="Main"><![CDATA[select * from auth_user;
 update auth_user set username="haneen.awad@gmail.com" , email="haneen.awad@gmail.com" where id=3
 select * from auth_user;
-select * from base_product;]]></console>
+select * from base_product;
+update auth_user set first_name="Haneen" where id=3
+update auth_user set username="haneen.tester@gmail.com" , email="haneen.tester@gmail.com" where id=7
+update auth_user set first_name="Tester" where id=7]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
