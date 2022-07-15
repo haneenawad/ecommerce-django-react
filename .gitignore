@@ -1,1 +1,7 @@
 /**/env
+chromedriver.exe
+geckodriver.exe
+msedgedriver.exe
+selenium-server-4.2.2.jar
+geckodriver.log
+ngrok.exe
