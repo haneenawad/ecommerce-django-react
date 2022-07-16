@@ -27,7 +27,7 @@ def driver():
     if browser_name == "firefox-webdriver":
         driver = webdriver.Firefox(service=ser_firefox)
     elif browser_name == "firefox":
-        firefox_options.add_argument("--headless")  #with the browser doesnt open
+        # firefox_options.add_argument("--headless")  #with the browser doesnt open
         dc = {
             "browserName": "firefox",
             # "browserVersion": "101.0.1(x64)",
@@ -36,8 +36,8 @@ def driver():
         driver = webdriver.Remote("http://localhost:4444", desired_capabilities=dc, options=firefox_options)
 
     elif browser_name == "chrome":
-        # chrome_options.add_argument("--headless")  # browser doesnt open when run the test
-        # chrome_options.add_argument("--disable-gpu")  # kartes msa5
+        chrome_options.add_argument("--headless")  # browser doesnt open when run the test
+        chrome_options.add_argument("--disable-gpu")  # kartes msa5
 
         dc = {
             "browserName": "chrome",
@@ -233,3 +233,5 @@ def test_admin_user_login(driver, validation):
     admin = driver.find_element(By.CSS_SELECTOR, "#adminmenu").text
     names = [username, admin]
     assert validation in names
+
+#1
