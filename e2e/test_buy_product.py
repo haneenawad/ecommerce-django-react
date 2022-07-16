@@ -202,4 +202,4 @@ def test_buy_product_changing_total_price_with_changing_quantity(driver):
 
     assert total_price == (2 * price_for_one)
 
-#1
+#12
