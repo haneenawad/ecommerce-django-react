@@ -201,3 +201,5 @@ def test_buy_product_changing_total_price_with_changing_quantity(driver):
     total_price = float(total_price_string[-7:])
 
     assert total_price == (2 * price_for_one)
+
+#1
