@@ -90,7 +90,6 @@ testing user
 
 '''
 
-
 def test_user_login(driver):
     driver.get("http://127.0.0.1:8000/#/")
     driver.find_element(By.CSS_SELECTOR, ".nav-link:nth-child(2)").click()

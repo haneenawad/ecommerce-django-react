@@ -128,6 +128,7 @@ def test_login_user():
 
     client.post("/api/users/register/", payload)
     response = client.post("/api/users/login/", dict(username="haneen@gmail.com", password="h12345678"))
+    assert response.data['name'] == payload['name']
     assert response.status_code == 200
 
 

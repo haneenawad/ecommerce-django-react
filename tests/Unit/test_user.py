@@ -49,12 +49,14 @@ def test_update_user_email():
 
 @pytest.mark.django_db
 def test_update_user_username():  # Don't update the username!!!! (solve : replace username by first_name)
-    user_created = User.objects.create_user('test1', 'test1@test.com', 'test1')  # username,email,password
+    user_created = User.objects.create_user(username='test1', email='test1@test.com', password='test1')  # username,email,password
     get_user = User.objects.get(id=user_created.id)
-    get_user.username = 'test2'
+    get_user.first_name = 'test2'
     get_user.save()
-    updated_user = User.objects.get(id=user_created.id)
-    assert updated_user.username == "test2"
+    print(get_user.first_name)
+    updated_user = User.objects.get(id=get_user.id)
+    print(updated_user.first_name)
+    assert updated_user.first_name == "test2"
 
 @pytest.mark.django_db
 def test_delete_user(user_1):
