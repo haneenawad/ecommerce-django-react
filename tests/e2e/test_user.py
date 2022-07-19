@@ -210,45 +210,7 @@
 #     # driver.execute_script("window.scrollTo(0,198.6666717529297)")
 #     assert driver.current_url == "http://127.0.0.1:8000/#/register?redirect=/"
 #
-# def test_user_update_profile(driver):  #test failed - BUG
-#     driver.get("http://127.0.0.1:8000/#/")
-#     driver.find_element(By.CSS_SELECTOR, ".nav-link:nth-child(2)").click()
-#     driver.find_element(By.ID, "email").click()
-#     driver.find_element(By.ID, "email").send_keys("haneen.tester1@gmail.com")
-#     driver.find_element(By.ID, "password").click()
-#     driver.find_element(By.ID, "password").send_keys("Hha12345")
-#     driver.find_element(By.CSS_SELECTOR, ".mt-3").click()
-#     time.sleep(2)
-#     driver.find_element(By.ID, "username").click()
-#     driver.find_element(By.LINK_TEXT, "Profile").click()
-#     driver.find_element(By.ID, "email").click()
-#     driver.find_element(By.ID, "email").send_keys("haneen.tester1@gmail.com")
-#     driver.execute_script(
-#         "document.getElementById('password').scrollIntoView();")
-#     time.sleep(1)
-#     driver.find_element(By.ID, "password").click()
-#     driver.find_element(By.ID, "password").send_keys("Hha1234")
-#     driver.find_element(By.ID, "passwordConfirm").click()
-#     driver.find_element(By.ID, "passwordConfirm").send_keys("Hha1234")
-#     driver.find_element(By.CSS_SELECTOR, "#root > div > main > div > div.col-md-3 > form > button").click()
-#     time.sleep(1)
-#     driver.execute_script(
-#         "document.getElementById('username').scrollIntoView();")
-#     time.sleep(2)
-#     driver.find_element(By.ID, "username").click()
-#     driver.find_element(By.LINK_TEXT, "Logout").click()
-#     driver.find_element(By.ID, "email").click()
-#     driver.find_element(By.ID, "email").send_keys("haneen.tester1@gmail.com")
-#     driver.find_element(By.ID, "password").click()
-#     driver.find_element(By.ID, "password").send_keys("Hha1234")
-#     driver.find_element(By.CSS_SELECTOR, ".mt-3").click()
-#     time.sleep(1)
-#     error_note=driver.find_element(By.CSS_SELECTOR,".fade").text
-#     assert error_note == "No active account found with the given credentials"
-#     # username = driver.find_element(By.CSS_SELECTOR, "#username").text
-#     # assert username == "HANEEN1"
-#
-#
+
 # '''
 # testing admin user
 #

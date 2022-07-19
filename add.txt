@@ -1,0 +1,14 @@
+{
+    "fields":
+    {
+        "project":
+        {
+            "key":"DEP"
+        },
+        "summary":"test if its work",
+        "description":"create of an issue project: http://localhost:8080/job/pipline_ecommerce_django_react/allure/",
+        "issuetype":
+        {
+            "name":"Bug"
+        }
+    }
