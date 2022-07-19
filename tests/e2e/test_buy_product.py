@@ -85,27 +85,27 @@ def driver():
     driver.close()
 
 
-def test_buy_product_without_account(driver):
-    driver.get("http://127.0.0.1:8000/#/")
-    driver.execute_script(
-        "document.querySelector('#root > div > main > div > div:nth-child(3) > div > div:nth-child(1) > div > div > a > div > strong').scrollIntoView();")
-    time.sleep(1)
-    driver.find_element(By.CSS_SELECTOR,
-                        "#root > div > main > div > div:nth-child(3) > div > div:nth-child(1) > div > div > a > div > strong").click()
-    # driver.execute_script("window.scrollTo(0,247)")
-    time.sleep(1)
-    driver.execute_script(
-        "document.querySelector('#root > div > main > div > div > div:nth-child(1) > div.col > div > div > div:nth-child(4) > button').scrollIntoView();")
-    time.sleep(1)
-    driver.find_element(By.CSS_SELECTOR,
-                              "#root > div > main > div > div > div:nth-child(1) > div.col > div > div > div:nth-child(4) > button").click()
-    time.sleep(1)
-    driver.find_element(By.CSS_SELECTOR, ".col-md-3 > .form-control").click()
-    dropdown = driver.find_element(By.CSS_SELECTOR, ".col-md-3 > .form-control")
-    dropdown.find_element(By.XPATH, "//option[. = '2']").click()
-    driver.find_element(By.CSS_SELECTOR, ".w-100").click()
-    assert driver.current_url == "http://127.0.0.1:8000/#/login?redirect=shipping"
-
+# def test_buy_product_without_account(driver):
+#     driver.get("http://127.0.0.1:8000/#/")
+#     driver.execute_script(
+#         "document.querySelector('#root > div > main > div > div:nth-child(3) > div > div:nth-child(1) > div > div > a > div > strong').scrollIntoView();")
+#     time.sleep(1)
+#     driver.find_element(By.CSS_SELECTOR,
+#                         "#root > div > main > div > div:nth-child(3) > div > div:nth-child(1) > div > div > a > div > strong").click()
+#     # driver.execute_script("window.scrollTo(0,247)")
+#     time.sleep(1)
+#     driver.execute_script(
+#         "document.querySelector('#root > div > main > div > div > div:nth-child(1) > div.col > div > div > div:nth-child(4) > button').scrollIntoView();")
+#     time.sleep(1)
+#     driver.find_element(By.CSS_SELECTOR,
+#                               "#root > div > main > div > div > div:nth-child(1) > div.col > div > div > div:nth-child(4) > button").click()
+#     time.sleep(1)
+#     driver.find_element(By.CSS_SELECTOR, ".col-md-3 > .form-control").click()
+#     dropdown = driver.find_element(By.CSS_SELECTOR, ".col-md-3 > .form-control")
+#     dropdown.find_element(By.XPATH, "//option[. = '2']").click()
+#     driver.find_element(By.CSS_SELECTOR, ".w-100").click()
+#     assert driver.current_url == "http://127.0.0.1:8000/#/login?redirect=shipping"
+#
 
 def test_buy_product_with_account_after_logged_in(driver):
     driver.get("http://127.0.0.1:8000/#/")
@@ -167,39 +167,39 @@ def test_buy_product_with_account_after_logged_in(driver):
     assert order_name.is_displayed()
 
 
-def test_buy_product_changing_total_price_with_changing_quantity(driver):
-    driver.get("http://127.0.0.1:8000/#/")
-    driver.find_element(By.CSS_SELECTOR, ".nav-link:nth-child(2)").click()
-    driver.find_element(By.ID, "email").click()
-    driver.find_element(By.ID, "email").send_keys("haneen.tester@gmail.com")
-    driver.find_element(By.ID, "password").click()
-    driver.find_element(By.ID, "password").send_keys("Hha12345")
-    driver.find_element(By.CSS_SELECTOR, ".mt-3").click()
-    time.sleep(4)
-    driver.execute_script(
-        "document.querySelector('#root > div > main > div > div:nth-child(3) > div > div:nth-child(1) > div > div > a > div > strong').scrollIntoView();")
-    time.sleep(1)
-    driver.find_element(By.CSS_SELECTOR,
-                        "#root > div > main > div > div:nth-child(3) > div > div:nth-child(1) > div > div > a > div > strong").click()
-    # driver.execute_script("window.scrollTo(0,247)")
-    time.sleep(2)
-    driver.execute_script(
-        "document.querySelector('#root > div > main > div > div > div:nth-child(1) > div.col > div > div > div:nth-child(4) > button').scrollIntoView();")
-    time.sleep(1)
-    driver.find_element(By.CSS_SELECTOR,
-                        "#root > div > main > div > div > div:nth-child(1) > div.col > div > div > div:nth-child(4) > button").click()
-    time.sleep(1)
-    driver.find_element(By.CSS_SELECTOR, ".col-md-3 > .form-control").click()
-    dropdown = driver.find_element(By.CSS_SELECTOR, ".col-md-3 > .form-control")
-    dropdown.find_element(By.XPATH, "//option[. = '2']").click()
-    price_for_one_string = driver.find_element(By.CSS_SELECTOR,
-                                               "#root > div > main > div > div.col-md-8 > div > div > div > div:nth-child(3)").text
-    price_for_one = float(price_for_one_string[1:])
-    time.sleep(3)
-    total_price_string = driver.find_element(By.CSS_SELECTOR,
-                                             "#root > div > main > div > div.col-md-4 > div > div.list-group.list-group-flush > div").text
-    total_price = float(total_price_string[-7:])
-
-    assert total_price == (2 * price_for_one)
-
-
+# def test_buy_product_changing_total_price_with_changing_quantity(driver):
+#     driver.get("http://127.0.0.1:8000/#/")
+#     driver.find_element(By.CSS_SELECTOR, ".nav-link:nth-child(2)").click()
+#     driver.find_element(By.ID, "email").click()
+#     driver.find_element(By.ID, "email").send_keys("haneen.tester@gmail.com")
+#     driver.find_element(By.ID, "password").click()
+#     driver.find_element(By.ID, "password").send_keys("Hha12345")
+#     driver.find_element(By.CSS_SELECTOR, ".mt-3").click()
+#     time.sleep(4)
+#     driver.execute_script(
+#         "document.querySelector('#root > div > main > div > div:nth-child(3) > div > div:nth-child(1) > div > div > a > div > strong').scrollIntoView();")
+#     time.sleep(1)
+#     driver.find_element(By.CSS_SELECTOR,
+#                         "#root > div > main > div > div:nth-child(3) > div > div:nth-child(1) > div > div > a > div > strong").click()
+#     # driver.execute_script("window.scrollTo(0,247)")
+#     time.sleep(2)
+#     driver.execute_script(
+#         "document.querySelector('#root > div > main > div > div > div:nth-child(1) > div.col > div > div > div:nth-child(4) > button').scrollIntoView();")
+#     time.sleep(1)
+#     driver.find_element(By.CSS_SELECTOR,
+#                         "#root > div > main > div > div > div:nth-child(1) > div.col > div > div > div:nth-child(4) > button").click()
+#     time.sleep(1)
+#     driver.find_element(By.CSS_SELECTOR, ".col-md-3 > .form-control").click()
+#     dropdown = driver.find_element(By.CSS_SELECTOR, ".col-md-3 > .form-control")
+#     dropdown.find_element(By.XPATH, "//option[. = '2']").click()
+#     price_for_one_string = driver.find_element(By.CSS_SELECTOR,
+#                                                "#root > div > main > div > div.col-md-8 > div > div > div > div:nth-child(3)").text
+#     price_for_one = float(price_for_one_string[1:])
+#     time.sleep(3)
+#     total_price_string = driver.find_element(By.CSS_SELECTOR,
+#                                              "#root > div > main > div > div.col-md-4 > div > div.list-group.list-group-flush > div").text
+#     total_price = float(total_price_string[-7:])
+#
+#     assert total_price == (2 * price_for_one)
+#
+#
