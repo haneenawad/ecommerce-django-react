@@ -98,3 +98,4 @@ def test_search_product(driver):
     assert searched_product == name_product
     # assert searched_product == "hero"
 
+#1
